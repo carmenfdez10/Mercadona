@@ -1,27 +1,33 @@
-.mainContainer {
-    flex: 1;
-    background-color: #f8f8f8;
-}
 
-/* --- SECCIÓN PRINCIPAL CON FONDO --- */
+/* --- 1. SECCIÓN HERO --- */
 .heroSection {
-    /* La imagen está en la carpeta public, así que usamos la barra '/' al principio */
     background-image: url('/guacamole.jpg');
-    background-size: cover;   /* Cubre todo el espacio sin deformarse */
+    background-size: cover;
     background-position: center;
-    
-    height: 500px;            /* Altura fija para que se vea bien la imagen */
+    height: 500px;
     width: 100%;
-    
-    /* Flexbox para alinear el texto a la derecha */
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* Centrado vertical */
-    align-items: flex-end;    /* Alineado a la DERECHA */
-    padding-right: 10%;       /* Espacio desde el borde derecho */
+    justify-content: center;
+    align-items: flex-end;.mainContainer {
+    flex: 1;
+    background-color: #fff;
 }
 
-/* Contenedor del texto para que no ocupe todo el ancho */
+/* --- 1. SECCIÓN HERO --- */
+.heroSection {
+    background-image: url('/guacamole.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 10%;
+}
+
 .heroContent {
     max-width: 500px;
     text-align: left;
@@ -32,7 +38,7 @@
     color: #000;
     line-height: 1.1;
     margin-bottom: 1rem;
-    font-family: 'Times New Roman', serif; /* Tipografía parecida a la captura */
+    font-family: 'Times New Roman', serif;
 }
 
 .heroSection p {
@@ -72,7 +78,125 @@
     background-color: #00603d;
 }
 
-/* --- GRID DE PRODUCTOS (Opcional, para que no quede vacío abajo) --- */
+/* --- CLASES COMUNES --- */
+.textContent {
+    flex: 1;
+    max-width: 450px;
+    text-align: left;
+}
+
+.textContent h2, .appTextContent h2 {
+    font-family: 'Times New Roman', serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.textContent h2 { color: #000; }
+
+.textContent p {
+    color: #666;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.imageContainer img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* --- 2 & 3. SECCIONES BLANCA Y GRIS --- */
+.onlineSection, .deliverySection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 4rem 2rem;
+    width: 100%;
+}
+
+.onlineSection { background-color: white; }
+.deliverySection { background-color: #f9f9f9; }
+
+.greenLink {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #007a4d;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.greenLink:hover { text-decoration: underline; }
+
+/* --- 4. NUEVA SECCIÓN APP (FONDO VERDE) --- */
+.appSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 4rem 2rem;
+    width: 100%;
+    background-color: #007a4d; /* Fondo Verde Mercadona */
+    color: white; /* Texto blanco */
+}
+
+/* Contenedor de imagen que no recorta */
+.imageContainerNoCrop {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Alinea la imagen a la derecha de su contenedor */
+}
+
+.imageContainerNoCrop img {
+    width: 100%;
+    max-width: 500px; /* Un poco más pequeña que las otras */
+    height: auto;
+    /* No usamos object-fit: cover aquí para verla entera */
+}
+
+.appTextContent {
+    flex: 1;
+    max-width: 450px;
+    text-align: left;
+}
+
+.appTextContent h2 { color: white; }
+
+.appTextContent p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.storeButtons {
+    display: flex;
+    gap: 20px;
+}
+
+.storeButtons img {
+    height: 50px; /* Altura fija para los botones */
+    width: auto;
+    transition: transform 0.2s;
+}
+
+.storeButtons img:hover {
+    transform: scale(1.05); /* Pequeño efecto al pasar el ratón */
+}
+
+/* --- GRID --- */
 .grid {
     padding: 2rem;
     display: grid;
@@ -90,21 +214,274 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* RWD para móviles */
-@media (max-width: 768px) {
+/* RWD: MÓVILES */
+@media (max-width: 850px) {
     .heroSection {
-        align-items: center; /* En móvil centramos todo */
+        align-items: center;
         padding-right: 0;
-        background-position: left; /* Movemos fondo para ver algo de verduras */
+        background-position: left;
     }
     .heroContent {
-        background-color: rgba(255,255,255,0.9); /* Fondo blanco semi-transparente para leer texto */
-        padding: 20px;
+        background-color: rgba(255,255,255,0.95);
+        padding: 2rem;
         border-radius: 10px;
         text-align: center;
-        margin: 0 20px;
+        margin: 0 1rem;
     }
-    .inputGroup {
+    
+    /* Apilamos verticalmente todas las secciones de info */
+    .onlineSection, .deliverySection, .appSection {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        padding: 3rem 1rem;
+    }
+
+    /* En móvil, la imagen de la app va arriba */
+    .appSection {
+        flex-direction: column-reverse;
+    }
+    
+    .textContent, .appTextContent {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .imageContainerNoCrop {
+        justify-content: center;
+    }
+
+    .storeButtons {
+        justify-content: center;
+    }
+}
+    padding-right: 10%;
+}
+
+.heroContent {
+    max-width: 500px;
+    text-align: left;
+}
+
+.heroSection h1 {
+    font-size: 3rem;
+    color: #000;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-family: 'Times New Roman', serif;
+}
+
+.heroSection p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.inputGroup {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 150px;
+}
+
+.button {
+    background-color: #007a4d;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #00603d;
+}
+
+/* --- CLASES COMUNES --- */
+.textContent {
+    flex: 1;
+    max-width: 450px;
+    text-align: left;
+}
+
+.textContent h2, .appTextContent h2 {
+    font-family: 'Times New Roman', serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.textContent h2 { color: #000; }
+
+.textContent p {
+    color: #666;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.imageContainer img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* --- 2 & 3. SECCIONES BLANCA Y GRIS --- */
+.onlineSection, .deliverySection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 4rem 2rem;
+    width: 100%;
+}
+
+.onlineSection { background-color: white; }
+.deliverySection { background-color: #f9f9f9; }
+
+.greenLink {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #007a4d;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.greenLink:hover { text-decoration: underline; }
+
+/* --- 4. NUEVA SECCIÓN APP (FONDO VERDE) --- */
+.appSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 4rem 2rem;
+    width: 100%;
+    background-color: #007a4d; /* Fondo Verde Mercadona */
+    color: white; /* Texto blanco */
+}
+
+/* Contenedor de imagen que no recorta */
+.imageContainerNoCrop {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Alinea la imagen a la derecha de su contenedor */
+}
+
+.imageContainerNoCrop img {
+    width: 100%;
+    max-width: 500px; /* Un poco más pequeña que las otras */
+    height: auto;
+    /* No usamos object-fit: cover aquí para verla entera */
+}
+
+.appTextContent {
+    flex: 1;
+    max-width: 450px;
+    text-align: left;
+}
+
+.appTextContent h2 { color: white; }
+
+.appTextContent p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.storeButtons {
+    display: flex;
+    gap: 20px;
+}
+
+.storeButtons img {
+    height: 50px; /* Altura fija para los botones */
+    width: auto;
+    transition: transform 0.2s;
+}
+
+.storeButtons img:hover {
+    transform: scale(1.05); /* Pequeño efecto al pasar el ratón */
+}
+
+/* --- GRID --- */
+.grid {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* RWD: MÓVILES */
+@media (max-width: 850px) {
+    .heroSection {
+        align-items: center;
+        padding-right: 0;
+        background-position: left;
+    }
+    .heroContent {
+        background-color: rgba(255,255,255,0.95);
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        margin: 0 1rem;
+    }
+    
+    /* Apilamos verticalmente todas las secciones de info */
+    .onlineSection, .deliverySection, .appSection {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        padding: 3rem 1rem;
+    }
+
+    /* En móvil, la imagen de la app va arriba */
+    .appSection {
+        flex-direction: column-reverse;
+    }
+    
+    .textContent, .appTextContent {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .imageContainerNoCrop {
+        justify-content: center;
+    }
+
+    .storeButtons {
         justify-content: center;
     }
 }
