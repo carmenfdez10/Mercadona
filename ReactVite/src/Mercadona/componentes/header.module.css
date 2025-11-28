@@ -1,14 +1,11 @@
 .header {
-    width: 100%; 
-    height: 80px;
-    padding: 0 20px; /* Agregamos más padding a los lados */
-    background-color: white; /* El color de fondo en la imagen parece blanco */
-    /* Quitamos el border para que coincida con la imagen */
     
+    width: 1872px; 
+    height: 80px;
+    padding: 0 20px; 
+    background-color: white; 
     display: flex;
-    align-items: center; /* Centra el contenido verticalmente */
-    /* Usamos 'space-between' para empujar el grupo de elementos de navegación 
-       y el selector de idioma (si existe) a los extremos */
+    align-items: center; 
     justify-content: space-between; 
     background-size: cover;
 }
@@ -17,35 +14,30 @@
 .nav {
     display: flex;
     align-items: center;
-    /* Un pequeño espacio entre el logo y el primer enlace */
     gap: 2rem; 
 }
 
 .logo {
-    /* Si necesitas estilizar el logo o su contenedor, hazlo aquí */
     margin-right: 1.5rem;
-  /* Separación adicional entre el logo y el primer enlace */
 }
 
 .linksContainer {
     display: flex;
     align-items: center;
-    gap: 1rem; /* Espacio entre cada enlace */
+    gap: 1rem; 
 }
 
-/* Estilos de los enlaces para que parezcan texto plano y sin subrayado */
 .linksContainer a {
-    color: #229E6B; /* Color de texto verde */
-    text-decoration: none; /* Elimina el subrayado por defecto */
-    font-weight: 500; /* Fuente de peso normal/medio */
+    color: #229E6B; 
+    text-decoration: none; 
+    font-weight: 500; 
     font-size: 1rem;
-    padding-top: 5px; /* Para alineación visual, si es necesario */
+    padding-top: 5px;
 }
 
 .languageSelector {
-    /* Estilos para el selector de idioma "Español" */
-    color: #444; /* Un gris oscuro */
+    color: #444; 
     cursor: pointer;
     font-weight: 500;
-    margin-left: auto; /* Empuja el selector de idioma al extremo derecho si .header tiene justify-content: space-between */
+    margin-left: auto; 
 }
