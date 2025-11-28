@@ -1,67 +1,34 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './header.module.css';
+import { Link } from "react-router-dom";
+import React from 'react';
+import estilos from './header.module.css';
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [language, setLanguage] = useState('Español');
-  const languages = ['Español', 'Inglés', 'Francés', 'Wolof'];
+// Componente para el selector de idioma
+const LanguageSelector = () => (
+    <div className={estilos.languageSelector}>
+        Español <span style={{ marginLeft: '5px' }}>&#9660;</span> {/* Flecha hacia abajo */}
+    </div>
+);
 
-  const handleLanguageSelect = (lang: string) => {
-    setLanguage(lang);
-    setIsOpen(false);
-  };
+export default function Header() {
+  // Usamos la URL del logo de la imagen
+  const logoSrc = "/mercadona.png"; 
 
-  return (
-    <header className={styles.header}>
-      <div className={styles.topBar}>
-        
-        {/* LOGO: Ahora usa el archivo /public/logo.svg */}
-        <Link to="/" className={styles.logoLink}>
-            <img 
-                src="/logo.svg" 
-                alt="Mercadona Logo" 
-                className={styles.logoIcon} 
-                // Ajusta el ancho si es necesario, dependiendo del tamaño de tu SVG
-                style={{ height: '60px', width: 'auto' }} 
-            />
-        </Link>
+  return (
+    <header className={estilos.header}>
+      
+      <nav className={estilos.nav}> 
+        <img src={logoSrc} alt="Logo de Mercadona" style={{ height: '35px' }} className={estilos.logo} />
 
-        <nav className={styles.nav}>
-            <Link to="/info">Conócenos</Link>
-            <Link to="/info">Supermercados</Link>
-            <Link to="/info">Trabaja con nosotros</Link>
-            <Link to="/info">Atención al Cliente</Link>
-        </nav>
-        
-        <div className={styles.languageContainer}>
-            <div 
-                className={styles.languageSelector} 
-                onClick={() => setIsOpen(!isOpen)}
-            >
-                <span>{language}</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M6 9l6 6 6-6"/>
-                </svg>
-            </div>
-
-            {isOpen && (
-                <ul className={styles.dropdown}>
-                    {languages.map((lang) => (
-                        <li 
-                            key={lang} 
-                            className={styles.dropdownItem}
-                            onClick={() => handleLanguageSelect(lang)}
-                        >
-                            {lang}
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </div>
-      </div>
-    </header>
-  );
-};
-
+        {/* Contenedor de los enlaces */}
+        <div className={estilos.linksContainer}>
+          <Link to="/Conocenos">Conócenos</Link>
+          <Link to="/paginas/Supermercados">Supermercados</Link>
+          <Link to="/paginas/TrabajaConNosotros">Trabaja con nosotros</Link>
+          <Link to="/paginas/AtencionAlCliente">Atención al cliente</Link>
+        </div>
+      </nav>
+      <LanguageSelector />
+    </header>
+  )
+}
 export default Header;
