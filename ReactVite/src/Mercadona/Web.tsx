@@ -1,15 +1,15 @@
-import * as React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Header from './componentes/Header';
 
 export default function Web() {
     return (
       <BrowserRouter>
         <Header />
-  
-        {/* Navbar debajo del header */}
-      
+        {/* Outlet renderiza lo que diga la Ruta hija (el Body) */}
+        <Outlet />
+        <Footer />
 
       </BrowserRouter>
     );
   }
+export default Web;

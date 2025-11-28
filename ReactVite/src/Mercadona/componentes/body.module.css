@@ -1,0 +1,110 @@
+.mainContainer {
+    flex: 1;
+    background-color: #f8f8f8;
+}
+
+/* --- SECCIÓN PRINCIPAL CON FONDO --- */
+.heroSection {
+    /* La imagen está en la carpeta public, así que usamos la barra '/' al principio */
+    background-image: url('/guacamole.jpg');
+    background-size: cover;   /* Cubre todo el espacio sin deformarse */
+    background-position: center;
+    
+    height: 500px;            /* Altura fija para que se vea bien la imagen */
+    width: 100%;
+    
+    /* Flexbox para alinear el texto a la derecha */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centrado vertical */
+    align-items: flex-end;    /* Alineado a la DERECHA */
+    padding-right: 10%;       /* Espacio desde el borde derecho */
+}
+
+/* Contenedor del texto para que no ocupe todo el ancho */
+.heroContent {
+    max-width: 500px;
+    text-align: left;
+}
+
+.heroSection h1 {
+    font-size: 3rem;
+    color: #000;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-family: 'Times New Roman', serif; /* Tipografía parecida a la captura */
+}
+
+.heroSection p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.inputGroup {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 150px;
+}
+
+.button {
+    background-color: #007a4d;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #00603d;
+}
+
+/* --- GRID DE PRODUCTOS (Opcional, para que no quede vacío abajo) --- */
+.grid {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* RWD para móviles */
+@media (max-width: 768px) {
+    .heroSection {
+        align-items: center; /* En móvil centramos todo */
+        padding-right: 0;
+        background-position: left; /* Movemos fondo para ver algo de verduras */
+    }
+    .heroContent {
+        background-color: rgba(255,255,255,0.9); /* Fondo blanco semi-transparente para leer texto */
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 0 20px;
+    }
+    .inputGroup {
+        justify-content: center;
+    }
+}
