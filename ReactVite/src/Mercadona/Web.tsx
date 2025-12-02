@@ -1,3 +1,4 @@
+
 import { Outlet, BrowserRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './componentes/Header';
@@ -6,6 +7,7 @@ import Supermercado from './paginas/Supermercados';
 import TrabajaConNostros from './paginas/TrabajaConNosotros';
 import AtencionAlCliente from './paginas/AtencionAlCliente';
 import Footer from './componentes/Footer';
+import Body from './componentes/Body';
 
 export default function Web() {
     return (
@@ -22,8 +24,10 @@ export default function Web() {
             <Route path="/paginas/AtencionAlCliente" element={<AtencionAlCliente />} />
           </Routes>
         </main>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+          <Body />
+        </div>
         <Footer />
-
       </BrowserRouter>
     );
   }
