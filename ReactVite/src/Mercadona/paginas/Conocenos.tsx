@@ -1,8 +1,5 @@
-
 export default function Conocenos() {
     return (
-        <p>
-         Conócenos
-        </p>
-      )
-  }
+            <h1>🤝 Conócenos: Nuestra Historia y Compromiso</h1>
+    );
+}

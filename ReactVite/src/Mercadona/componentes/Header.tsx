@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import React from 'react';
 import estilos from './header.module.css';
+import { useState } from 'react';
 
 // Componente para el selector de idioma
 const LanguageSelector = () => (
     <div className={estilos.languageSelector}>
-        Español <span style={{ marginLeft: '5px' }}>&#9660;</span> {/* Flecha hacia abajo */}
+        Español <span style={{ marginLeft: '5px' }}>&#9660;</span> 
     </div>
 );
 

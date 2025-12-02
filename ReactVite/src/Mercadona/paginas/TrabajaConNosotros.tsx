@@ -1,7 +1,5 @@
 export default function TrabajaConNostros() {
     return (
-        <p>
-         Trabaja con nosotros
-        </p>
+        <h1>Trabaja con nosotros</h1>
       )
   }

@@ -1,7 +1,5 @@
 export default function AtencionAlCliente() {
     return (
-        <p>
-         Atención al cliente
-        </p>
+        <h1>Atención al cliente</h1>
       )
   }
