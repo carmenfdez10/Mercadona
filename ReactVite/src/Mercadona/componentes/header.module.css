@@ -8,17 +8,16 @@
 
 /* --- Contenedor de (Header) --- */
 .header {
-    max-width: 1250px;
-    height: 100%;
-    margin: 0 auto; 
-    padding: 0 20px;
+    width: 1872px; 
+    height: 80px;
+    padding: 0 20px; 
+    background-color: white; 
     display: flex;
     align-items: center; 
     justify-content: center; 
     position: relative; 
 }
 
-/* --- Bloque de Navegación (Logo + Links) - El contenido centrado --- */
 .nav {
     display: flex;
     align-items: center;

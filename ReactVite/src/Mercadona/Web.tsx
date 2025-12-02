@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Header from './componentes/Header';
 import Conocenos from './paginas/Conocenos';
 import Supermercado from './paginas/Supermercados';
@@ -10,16 +10,11 @@ export default function Web() {
     return (
       <Router>
         <Header />
-        <main>
-          <Routes>
-            <Route path="/ReactVite/src/Mercadona/paginas/Conocenos.tsx" element={<Conocenos />} />
-            <Route path="/Conocenos" element={<Conocenos />} />
-            <Route path="/paginas/Supermercados" element={<Supermercado />} />
-            <Route path="/paginas/TrabajaConNosotros" element={<TrabajaConNostros />} />
-            <Route path="/paginas/AtencionAlCliente" element={<AtencionAlCliente />} />
-          </Routes>
-        </main>
-        < Footer/>
-      </Router>
+        {/* Outlet renderiza lo que diga la Ruta hija (el Body) */}
+        <Outlet />
+        <Footer />
+
+      </BrowserRouter>
     );
   }
+export default Web;
