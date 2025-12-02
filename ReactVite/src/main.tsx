@@ -1,11 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Web from './Mercadona/Web'
 import './index.css'
-import Web from './Mercadona/Web.tsx'
+import Web from './Mercadona/Web'
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
-    <App />
+    <Web />
   </StrictMode>
 )
