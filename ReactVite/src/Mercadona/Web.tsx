@@ -6,8 +6,8 @@ import Conocenos from './paginas/Conocenos';
 import Supermercado from './paginas/Supermercados';
 import TrabajaConNostros from './paginas/TrabajaConNosotros';
 import AtencionAlCliente from './paginas/AtencionAlCliente';
-import Footer from './componentes/Footer';
 import Body from './componentes/Body';
+import Footer from './componentes/Footer';
 
 export default function Web() {
     return (
@@ -27,7 +27,7 @@ export default function Web() {
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <Body />
         </div>
-        <Footer />
+        <Footer/>
       </BrowserRouter>
     );
   }
