@@ -1,0 +1,68 @@
+/* --- Contenedor a Ancho Completo --- */
+.headerWrapper {
+    width: 100%;
+    background-color: #FFFFFF;
+    height: 90px;
+    border-bottom: 1px solid #E0E0E0; 
+}
+
+/* --- Contenedor de (Header) --- */
+.header {
+    width: 1872px; 
+    height: 80px;
+    padding: 0 20px; 
+    background-color: white; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; 
+    margin-right: 150px;
+    /* El .nav se centra gracias a justify-content: center en .header */
+}
+
+.logo {
+    max-height: 40px; 
+}
+
+.linksContainer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; 
+    margin-left: 1.5rem;
+}
+
+.linksContainer a {
+    color: #00AA55; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 1rem;
+    padding: 3px 0;
+    transition: color 0.2s ease;
+}
+
+.linksContainer a:hover {
+    color: #008744; 
+}
+.languageSection {
+    position: absolute;
+    right: 20px; 
+    top: 50%; 
+    display: flex;
+    align-items: center;
+}
+
+.languageSelector {
+    color: #444; 
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px; 
+}
