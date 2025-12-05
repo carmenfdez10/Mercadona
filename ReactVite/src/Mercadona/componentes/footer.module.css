@@ -1,3 +1,150 @@
+/* Contenedor principal: Fondo oscuro "Petróleo" */
+.footer {
+    background-color: #1a2f35; 
+    color: white;
+    font-family: 'Inter', system-ui, sans-serif;
+    width: 100%;
+}
+
+/* --- ESTRUCTURA PRINCIPAL --- */
+.mainContent {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 8%;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Títulos de columnas (Cliente, Trabajador...) */
+.column h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+/* Enlaces */
+.column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.column li {
+    margin-bottom: 12px;
+}
+
+.column a {
+    text-decoration: none;
+    color: #d1d5db; /* Gris claro */
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.column a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* --- ZONA CONTACTO (Derecha) --- */
+.contactColumn {
+    text-align: right;
+    min-width: 250px;
+    margin-left: auto; /* Empuja a la derecha */
+}
+
+/* Bloque Teléfono + Imagen */
+.phoneBlock {
+    display: flex;
+    align-items: center; /* Alinea verticalmente imagen y texto */
+    justify-content: flex-end; /* Alinea a la derecha */
+    gap: 15px; /* Espacio entre la cara y el número */
+    margin-bottom: 25px;
+    color: white;
+}
+
+/* Estilo para tu imagen callcenter.png */
+.callCenterImg {
+    height: 45px; /* Tamaño ajustado para que cuadre con el texto grande */
+    width: auto;
+    display: block;
+}
+
+.phoneNumber {
+    font-size: 2rem; /* Número grande y visible */
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Iconos Redes Sociales */
+.socialIcons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.socialIcons a {
+    color: white;
+    transition: transform 0.2s;
+    display: flex; /* Para centrar bien los iconos SVG */
+}
+
+.socialIcons a:hover {
+    transform: scale(1.1);
+}
+
+/* --- BARRA LEGAL INFERIOR --- */
+.legalBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    font-size: 0.85rem;
+    color: #9ca3af;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legalLinks {
+    display: flex;
+    gap: 25px;
+}
+
+.legalLinks a {
+    color: #9ca3af;
+    text-decoration: underline;
+}
+
+.legalLinks a:hover {
+    color: white;
+}
+
+/* --- RESPONSIVE (Móviles) --- */
+@media (max-width: 900px) {
+    .mainContent {
+        flex-direction: column;
+        padding: 40px 5%;
+    }
+
+    .contactColumn {
+        text-align: left;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .phoneBlock, .socialIcons {
+        justify-content: flex-start; /* Alinea a la izquierda en móvil */
+    }
+
+    .legalBar {
+        flex-direction: column-reverse;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .legalLinks {
+        flex-direction: column;
+        gap: 10px;
+    }
 .footer {
     background-color: #333;
     color: #ccc;
