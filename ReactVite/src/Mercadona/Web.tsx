@@ -34,6 +34,9 @@ export default function Web() {
           </Routes>
         </main>
 
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+          <Body />
+        </div>
         <Footer/>
       </BrowserRouter>
     );

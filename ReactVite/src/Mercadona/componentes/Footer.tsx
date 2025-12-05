@@ -87,6 +87,11 @@ const Footer = () => {
         </div>
       </div>
 
+      <p>© Mercadona S.A. Todos los derechos reservados.</p>
+      <div className={styles.links}>
+        <span>Condiciones de uso</span>
+        <span>Política de privacidad</span>
+      </div>
     </footer>
   );
 };

@@ -1,0 +1,161 @@
+/* --- Contenedor de (Header) --- */
+.header {
+    width: 100%; 
+    height: 80px;
+    padding: 0 20px; 
+    background-color: white; 
+    display: flex;
+    justify-content: center; 
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; 
+    /* El .nav se centra gracias a justify-content: center en .header */
+}
+
+.logo {
+    height: 35px;
+    max-height: 40px; 
+}
+
+.linksContainer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; 
+    margin-left: 40px;
+}
+
+.linksContainer a {
+    color: #00AA55; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 1rem;
+    padding: 3px 0;
+    transition: color 0.2s ease;
+}
+
+.linksContainer a:hover {
+    color: #008744; 
+}
+
+.languageSection {
+    position: absolute;
+    right: 20px; 
+    top: 50%; 
+    display: flex;
+    align-items: center;
+}
+
+.languageSelector {
+    color: #444; 
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px; 
+}
+
+/* 1. Botón de Hamburguesa */
+.menuToggle {
+    display: none; /* Oculto por defecto en escritorio */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 100;
+    margin-top: 20px;
+}
+
+.bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #00AA55; /* Color verde de Mercadona */
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* 2. Menú Desplegable Móvil */
+.mobileMenu {
+    /* Oculto por defecto, se mueve fuera de la pantalla */
+    position: absolute;
+    top: 80px; /* Debajo del header */
+    left: 0;
+    width: 100%;
+    background-color: #00AA55; /* Fondo verde solicitado */
+    
+    /* El menú no será visible hasta que se active la clase .open */
+    height: 0; 
+    overflow: hidden; 
+    transition: height 0.4s ease-in-out;
+    z-index: 99;
+}
+
+.mobileMenu.open {
+    /* La altura del menú desplegado (ajusta según el contenido) */
+    height: 200px; 
+}
+
+/* Contenedor de Enlaces Móviles */
+.mobileLinksContainer {
+    display: flex;
+    flex-direction: column; /* Apilados verticalmente */
+    padding: 20px 40px;
+}
+
+.mobileLinksContainer a {
+    color: #FFFFFF; /* Texto blanco solicitado */
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separador sutil */
+    transition: background-color 0.2s;
+}
+
+.mobileLinksContainer a:last-child {
+    border-bottom: none;
+}
+
+.mobileLinksContainer a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ================================================= */
+/* --- MEDIA QUERY (Activación del Responsive) --- */
+/* ================================================= */
+
+@media (max-width: 768px) {
+    
+    .header {
+        padding: 0 20px; /* Menos padding en pantallas pequeñas */
+        justify-content: space-between;
+    }
+
+    /* 1. Mostrar el botón de hamburguesa */
+    .menuToggle {
+        display: block;
+    }
+
+    /* 2. Ocultar los enlaces de navegación de escritorio */
+    .linksContainer {
+        display: none; 
+    }
+    
+    /* 3. Ajustar la navegación principal: el logo se mantiene */
+    .nav {
+        /* Movemos el logo al centro visual si la hamburguesa está a la izquierda */
+        /* Eliminando el margin-left que pusiste antes en el header.tsx original */
+    }
+
+    /* Opcional: Ocultar el selector de idioma o ajustarlo si es necesario */
+    .languageSelector {
+        font-size: 0.9rem;
+    }
+}
